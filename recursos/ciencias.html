@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciencias Naturales - Biblioteca Educativa</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f2f5fa;
+        font-family: Arial, sans-serif;
+        color: #243447;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #174174;
+        padding: 30px 20px;
+        color: white;
+        text-align: center;
+      }
+
+      main {
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      .seccion {
+        background: white;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px #0000000d;
+      }
+
+      .etapa {
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        background: #e4eefb;
+        border-left: 4px solid #174174;
+        border-radius: 5px;
+      }
+
+      .pregunta {
+        margin: 20px 0;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+      }
+
+      select {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #aebac8;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+
+      button,
+      .volver {
+        display: inline-block;
+        background: #174174;
+        color: white;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      button:hover,
+      .volver:hover {
+        background: #2764a1;
+      }
+
+      #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #566575;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Ciencias Naturales</h1>
+      <p>Biblioteca Educativa Local</p>
+    </header>
+
+    <main>
+      <a href="../index.html" class="volver"> Volver al inicio </a>
+
+      <section class="seccion">
+        <h2>Clase 1: El ciclo del agua</h2>
+
+        <p>
+          El agua está presente en los ríos, lagunas, mares, plantas y seres
+          vivos. En la naturaleza circula mediante un proceso llamado ciclo del
+          agua.
+        </p>
+
+        <h3>Etapas principales</h3>
+
+        <div class="etapa">
+          <strong>1. Evaporación</strong>
+          <p>
+            El calor del Sol transforma parte del agua líquida en vapor. Este
+            vapor pasa a la atmósfera.
+          </p>
+        </div>
+
+        <div class="etapa">
+          <strong>2. Condensación</strong>
+          <p>
+            Cuando el vapor de agua se enfría, puede transformarse en pequeñas
+            gotas que forman las nubes.
+          </p>
+        </div>
+
+        <div class="etapa">
+          <strong>3. Precipitación</strong>
+          <p>
+            El agua de las nubes puede caer a la superficie en forma de lluvia,
+            nieve o granizo.
+          </p>
+        </div>
+
+        <div class="etapa">
+          <strong>4. Acumulación y circulación</strong>
+          <p>
+            El agua llega a ríos, lagunas, mares y suelos. Una parte se infiltra
+            y otra circula por la superficie. El ciclo continúa.
+          </p>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <h2>Actividad de aprendizaje</h2>
+        <p>Responde las siguientes preguntas sobre el ciclo del agua.</p>
+
+        <div class="pregunta">
+          <label for="p1"> 1. ¿Qué provoca la evaporación del agua? </label>
+          <select id="p1">
+            <option value="">Selecciona</option>
+            <option value="a">El viento únicamente</option>
+            <option value="b">El calor del Sol</option>
+            <option value="c">Las piedras</option>
+          </select>
+        </div>
+
+        <div class="pregunta">
+          <label for="p2">
+            2. ¿Cómo se llama el proceso en el que el vapor forma gotas de agua?
+          </label>
+          <select id="p2">
+            <option value="">Selecciona</option>
+            <option value="a">Condensación</option>
+            <option value="b">Precipitación</option>
+            <option value="c">Evaporación</option>
+          </select>
+        </div>
+
+        <div class="pregunta">
+          <label for="p3"> 3. ¿Cuál es un ejemplo de precipitación? </label>
+          <select id="p3">
+            <option value="">Selecciona</option>
+            <option value="a">El agua que se evapora</option>
+            <option value="b">El agua que hierve</option>
+            <option value="c">La lluvia</option>
+          </select>
+        </div>
+
+        <button type="button" onclick="calificar()">Calificar actividad</button>
+
+        <p id="resultado" role="status"></p>
+      </section>
+    </main>
+
+    <footer>Biblioteca Educativa Local - Prototipo académico</footer>
+
+    <script>
+      function calificar() {
+        const respuestas = ["b", "a", "c"];
+        let correctas = 0;
+
+        for (let i = 1; i <= 3; i++) {
+          const seleccion = document.getElementById("p" + i).value;
+
+          if (seleccion === "") {
+            document.getElementById("resultado").textContent =
+              "Debes responder todas las preguntas.";
+            return;
+          }
+
+          if (seleccion === respuestas[i - 1]) {
+            correctas++;
+          }
+        }
+
+        const porcentaje = (correctas / 3) * 100;
+
+        document.getElementById("resultado").textContent =
+          "Resultado: " +
+          correctas +
+          " de 3 respuestas correctas (" +
+          porcentaje.toFixed(1) +
+          "%).";
+      }
+    </script>
+  </body>
+</html>
