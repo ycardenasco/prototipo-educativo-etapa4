@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenguaje - Biblioteca Educativa</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f5fa;
+        color: #243447;
+      }
+
+      header {
+        background: #174174;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      main {
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      .seccion {
+        background: white;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+      }
+
+      .pregunta {
+        margin: 20px 0;
+      }
+
+      select {
+        display: block;
+        padding: 10px;
+        margin-top: 8px;
+        max-width: 100%;
+      }
+
+      button,
+      .volver {
+        display: inline-block;
+        background: #174174;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 18px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      button:hover,
+      .volver:hover {
+        background: #2764a1;
+      }
+
+      #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Lenguaje</h1>
+      <p>Biblioteca Educativa Local</p>
+    </header>
+
+    <main>
+      <a href="../index.html" class="volver"> Volver al inicio </a>
+
+      <section class="seccion">
+        <h2>Clase 1: Comprensión lectora</h2>
+
+        <p>Lee atentamente el siguiente texto y responde las preguntas.</p>
+
+        <h3>La huerta escolar</h3>
+
+        <p>
+          Cada mañana, Lina revisa las plantas de la huerta escolar. Observa si
+          la tierra está seca y agrega agua cuando es necesario.
+        </p>
+
+        <p>
+          Un viernes notó hojas amarillas en una planta y decidió consultar con
+          su profesora antes de cambiar sus cuidados.
+        </p>
+      </section>
+
+      <section class="seccion">
+        <h2>Actividad de comprensión</h2>
+
+        <div class="pregunta">
+          <label for="p1"> 1. ¿Qué revisa Lina cada mañana? </label>
+          <select id="p1">
+            <option value="">Selecciona</option>
+            <option value="a">Los libros</option>
+            <option value="b">Las plantas</option>
+            <option value="c">Las ventanas</option>
+          </select>
+        </div>
+
+        <div class="pregunta">
+          <label for="p2"> 2. ¿Qué hace cuando la tierra está seca? </label>
+          <select id="p2">
+            <option value="">Selecciona</option>
+            <option value="a">Agrega agua</option>
+            <option value="b">Retira las plantas</option>
+            <option value="c">Cierra la huerta</option>
+          </select>
+        </div>
+
+        <div class="pregunta">
+          <label for="p3"> 3. ¿Qué hizo al encontrar hojas amarillas? </label>
+          <select id="p3">
+            <option value="">Selecciona</option>
+            <option value="a">Cortó las plantas</option>
+            <option value="b">Ignoró el problema</option>
+            <option value="c">Consultó con su profesora</option>
+          </select>
+        </div>
+
+        <button onclick="calificar()">Calificar actividad</button>
+
+        <p id="resultado" role="status"></p>
+      </section>
+    </main>
+
+    <script>
+      function calificar() {
+        const respuestas = ["b", "a", "c"];
+        let correctas = 0;
+
+        for (let i = 1; i <= 3; i++) {
+          const seleccion = document.getElementById("p" + i).value;
+
+          if (seleccion === "") {
+            document.getElementById("resultado").textContent =
+              "Debes responder todas las preguntas.";
+            return;
+          }
+
+          if (seleccion === respuestas[i - 1]) {
+            correctas++;
+          }
+        }
+
+        document.getElementById("resultado").textContent =
+          "Resultado: " + correctas + " de 3 respuestas correctas.";
+      }
+    </script>
+  </body>
+</html>
