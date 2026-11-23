@@ -1,182 +1,223 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matemáticas - Biblioteca Educativa</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        body {
-            margin: 0;
-            background: #f2f5fa;
-            font-family: Arial, sans-serif;
-            color: #243447;
-        }
+      body {
+        margin: 0;
+        background: #f2f5fa;
+        font-family: Arial, sans-serif;
+        color: #243447;
+      }
 
-        header {
-            background: #174174;
-            padding: 30px;
-            color: white;
-            text-align: center;
-        }
+      header {
+        background: #174174;
+        padding: 30px;
+        color: white;
+        text-align: center;
+      }
 
-        main {
-            max-width: 850px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+      main {
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
 
-        .seccion {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-        }
+      .seccion {
+        background: white;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+      }
 
-        .pregunta {
-            margin: 20px 0;
-        }
+      .pregunta {
+        margin: 20px 0;
+      }
 
-        select {
-            display: block;
-            padding: 10px;
-            margin-top: 8px;
-            min-width: 150px;
-        }
+      select {
+        display: block;
+        padding: 10px;
+        margin-top: 8px;
+        min-width: 150px;
+      }
 
-        button, .volver {
-            display: inline-block;
-            padding: 12px 18px;
-            border: none;
-            border-radius: 6px;
-            background: #174174;
-            color: white;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-        }
+      button,
+      .volver {
+        display: inline-block;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 6px;
+        background: #174174;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+      }
 
-        button:hover, .volver:hover {
-            background: #2764a1;
-        }
+      button:hover,
+      .volver:hover {
+        background: #2764a1;
+      }
 
-        #resultado {
-            margin-top: 20px;
-            font-weight: bold;
-        }
+      #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Matemáticas</h1>
-        <p>Biblioteca Educativa Local</p>
+      <h1>Matemáticas</h1>
+      <p>Biblioteca Educativa Local</p>
     </header>
 
     <main>
+      <a class="volver" href="../index.html"> Volver al inicio </a>
 
-        <a class="volver" href="../index.html">
-            Volver al inicio
-        </a>
+      <section class="seccion">
+        <h2>Clase 1: Operaciones básicas</h2>
 
-        <section class="seccion">
-            <h2>Clase 1: Operaciones básicas</h2>
+        <p>Las operaciones básicas permiten realizar cálculos con números.</p>
 
-            <p>
-                Las operaciones básicas permiten realizar
-                cálculos con números.
-            </p>
+        <h3>Suma</h3>
+        <p>Sirve para reunir cantidades. Ejemplo: 5 + 3 = 8.</p>
 
-            <h3>Suma</h3>
-            <p>
-                Sirve para reunir cantidades.
-                Ejemplo: 5 + 3 = 8.
-            </p>
+        <h3>Resta</h3>
+        <p>
+          Sirve para encontrar la diferencia entre cantidades. Ejemplo: 10 - 4 =
+          6.
+        </p>
 
-            <h3>Resta</h3>
-            <p>
-                Sirve para encontrar la diferencia
-                entre cantidades.
-                Ejemplo: 10 - 4 = 6.
-            </p>
+        <h3>Multiplicación</h3>
+        <p>Representa una suma repetida. Ejemplo: 3 × 2 = 6.</p>
+      </section>
 
-            <h3>Multiplicación</h3>
-            <p>
-                Representa una suma repetida.
-                Ejemplo: 3 × 2 = 6.
-            </p>
-        </section>
+      <section class="seccion">
+        <h2>Actividad de aprendizaje</h2>
+        <p>Selecciona la respuesta correcta.</p>
 
-        <section class="seccion">
-            <h2>Actividad de aprendizaje</h2>
-            <p>Selecciona la respuesta correcta.</p>
+        <div class="pregunta">
+          <label for="p1">1. ¿Cuánto es 5 + 3?</label>
+          <select id="p1">
+            <option value="">Selecciona</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </div>
 
-            <div class="pregunta">
-                <label for="p1">1. ¿Cuánto es 5 + 3?</label>
-                <select id="p1">
-                    <option value="">Selecciona</option>
-                    <option value="6">6</option>
-                    <option value="8">8</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
+        <div class="pregunta">
+          <label for="p2">2. ¿Cuánto es 10 - 4?</label>
+          <select id="p2">
+            <option value="">Selecciona</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+          </select>
+        </div>
 
-            <div class="pregunta">
-                <label for="p2">2. ¿Cuánto es 10 - 4?</label>
-                <select id="p2">
-                    <option value="">Selecciona</option>
-                    <option value="4">4</option>
-                    <option value="6">6</option>
-                    <option value="8">8</option>
-                </select>
-            </div>
+        <div class="pregunta">
+          <label for="p3">3. ¿Cuánto es 3 × 2?</label>
+          <select id="p3">
+            <option value="">Selecciona</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+          </select>
+        </div>
 
-            <div class="pregunta">
-                <label for="p3">3. ¿Cuánto es 3 × 2?</label>
-                <select id="p3">
-                    <option value="">Selecciona</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="9">9</option>
-                </select>
-            </div>
+        <button onclick="calificar()">Calificar actividad</button>
 
-            <button onclick="calificar()">
-                Calificar actividad
-            </button>
-
-            <p id="resultado" role="status"></p>
-        </section>
-
+        <p id="resultado" role="status"></p>
+      </section>
     </main>
 
     <script>
-        function calificar() {
-            const respuestas = ["8", "6", "6"];
-            let correctas = 0;
+      function calificar() {
+        const respuestas = ["8", "6", "6"];
+        let correctas = 0;
 
-            for (let i = 1; i <= 3; i++) {
-                const seleccion = document.getElementById("p" + i).value;
+        for (let i = 1; i <= 3; i++) {
+          const seleccion = document.getElementById("p" + i).value;
 
-                if (seleccion === "") {
-                    document.getElementById("resultado").textContent =
-                        "Debes responder todas las preguntas.";
-                    return;
-                }
-
-                if (seleccion === respuestas[i - 1]) {
-                    correctas++;
-                }
-            }
-
+          if (seleccion === "") {
             document.getElementById("resultado").textContent =
-                "Resultado: " + correctas + " de 3 respuestas correctas.";
+              "Debes responder todas las preguntas.";
+            return;
+          }
+
+          if (seleccion === respuestas[i - 1]) {
+            correctas++;
+          }
         }
+
+        document.getElementById("resultado").textContent =
+          "Resultado: " + correctas + " de 3 respuestas correctas.";
+      }
     </script>
 
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const clave = "progreso_" + window.location.pathname;
+        const preguntas = ["p1", "p2", "p3"];
+        const resultado = document.getElementById("resultado");
+
+        function guardar() {
+          const respuestas = preguntas.map(
+            (id) => document.getElementById(id).value,
+          );
+
+          localStorage.setItem(
+            clave,
+            JSON.stringify({
+              respuestas: respuestas,
+              calificacion: resultado.textContent,
+            }),
+          );
+        }
+
+        const guardado = localStorage.getItem(clave);
+
+        if (guardado) {
+          try {
+            const datos = JSON.parse(guardado);
+
+            preguntas.forEach((id, i) => {
+              const campo = document.getElementById(id);
+              const valor = datos.respuestas[i];
+
+              if ([...campo.options].some((op) => op.value === valor)) {
+                campo.value = valor;
+              }
+            });
+
+            resultado.textContent = datos.calificacion || "";
+          } catch (error) {
+            localStorage.removeItem(clave);
+          }
+        }
+
+        preguntas.forEach((id) => {
+          document.getElementById(id).addEventListener("change", () => {
+            resultado.textContent = "";
+            guardar();
+          });
+        });
+
+        const boton = [...document.querySelectorAll("button")].find((b) =>
+          b.textContent.includes("Calificar actividad"),
+        );
+
+        if (boton) {
+          boton.addEventListener("click", guardar);
+        }
+      });
+    </script>
+  </body>
 </html>

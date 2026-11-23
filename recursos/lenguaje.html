@@ -159,5 +159,62 @@
           "Resultado: " + correctas + " de 3 respuestas correctas.";
       }
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const clave = "progreso_" + window.location.pathname;
+        const preguntas = ["p1", "p2", "p3"];
+        const resultado = document.getElementById("resultado");
+
+        function guardar() {
+          const respuestas = preguntas.map(
+            (id) => document.getElementById(id).value,
+          );
+
+          localStorage.setItem(
+            clave,
+            JSON.stringify({
+              respuestas: respuestas,
+              calificacion: resultado.textContent,
+            }),
+          );
+        }
+
+        const guardado = localStorage.getItem(clave);
+
+        if (guardado) {
+          try {
+            const datos = JSON.parse(guardado);
+
+            preguntas.forEach((id, i) => {
+              const campo = document.getElementById(id);
+              const valor = datos.respuestas[i];
+
+              if ([...campo.options].some((op) => op.value === valor)) {
+                campo.value = valor;
+              }
+            });
+
+            resultado.textContent = datos.calificacion || "";
+          } catch (error) {
+            localStorage.removeItem(clave);
+          }
+        }
+
+        preguntas.forEach((id) => {
+          document.getElementById(id).addEventListener("change", () => {
+            resultado.textContent = "";
+            guardar();
+          });
+        });
+
+        const boton = [...document.querySelectorAll("button")].find((b) =>
+          b.textContent.includes("Calificar actividad"),
+        );
+
+        if (boton) {
+          boton.addEventListener("click", guardar);
+        }
+      });
+    </script>
   </body>
 </html>
